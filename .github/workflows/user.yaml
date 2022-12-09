@@ -14,10 +14,12 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           source: 's3://sharedflows/artifacts/workflows/reusable_action.yaml'
           dest: 'reusable_action.yaml'
-      - name: Check downloads
-        run: ls -lah
+      - uses: actions/upload-artifact@v2
+        with:
+          name: flow
+          path: reusable_action.yaml
   call:
-    uses: ./.github/workflows/reusable_action.yaml
+    uses: private-actions-users-club/priv-action/reusable_action.yaml@master
     with:
       param1: Jason
     secrets:

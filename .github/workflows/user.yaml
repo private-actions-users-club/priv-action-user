@@ -19,7 +19,7 @@ jobs:
           name: flow
           path: reusable_action.yaml
   call:
-    uses: private-actions-users-club/priv-action/reusable_action.yaml@master
+    uses: private-actions-users-club/priv-action/.github/workflows/reusable_action.yaml@master
     with:
       param1: Jason
     secrets:

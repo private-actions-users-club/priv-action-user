@@ -17,6 +17,6 @@ jobs:
       - name: Check downloads
         run: ls -lah
   call-workflow-passing-data:
-    uses: ./.github/workflows/reusable_action.yaml
+    uses: ./reusable_action.yaml
     with:
       param1: Jason

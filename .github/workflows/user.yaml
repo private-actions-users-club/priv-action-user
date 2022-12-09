@@ -4,6 +4,6 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: skudasov/priv-action/.github/workflows/reusable_action.yml@main
+    uses: .github/workflows/reusable_action.yml
     with:
       param1: Jason

@@ -14,6 +14,6 @@ jobs:
       - name: Checkout tools repo
         uses: actions/checkout@v3
         with:
-          repository: skudasov/priv-action
+          repository: private-actions-users-club/priv-action
       - name: reusable flow step
         run: echo "Hello, reusable!"

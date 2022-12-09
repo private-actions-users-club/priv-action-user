@@ -20,3 +20,5 @@ jobs:
     uses: ./.github/workflows/reusable_action.yaml
     with:
       param1: Jason
+    secrets:
+      token: ${{ secrets.GH_PAT }}

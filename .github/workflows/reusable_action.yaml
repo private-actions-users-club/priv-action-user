@@ -6,8 +6,6 @@ on:
       param1:
         required: true
         type: string
-    secrets:
-
 jobs:
   triage:
     runs-on: ubuntu-latest

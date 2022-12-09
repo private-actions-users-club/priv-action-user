@@ -3,6 +3,21 @@ on:
   push:
 
 jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: keithweaver/aws-s3-github-action@v1.0.0 # Verifies the recursive flag
+        name: sync folder
+        with:
+          command: sync
+          source: ${{ secrets.S3_BUCKET }}
+          destination: ./sharedflows/
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_REGION }}
+      - name: Check downloads
+        run: ls -lah ./sharedflows/
   call-workflow-passing-data:
     uses: ./.github/workflows/reusable_action.yaml
     with:

@@ -16,7 +16,7 @@ jobs:
           dest: 'reusable_action.yaml'
       - name: Check downloads
         run: ls -lah
-  call-workflow-passing-data:
-    uses: ./reusable_action.yaml
-    with:
-      param1: Jason
+      - name: Call reusable workflow locally
+        uses: ./reusable_action.yaml
+        with:
+          param1: Jason

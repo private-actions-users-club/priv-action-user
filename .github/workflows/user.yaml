@@ -1,0 +1,9 @@
+name: Calling reusable workflow example
+on:
+  push:
+
+jobs:
+  call-workflow-passing-data:
+    uses: skudasov/priv-action/.github/workflows/reusable_action.yml@main
+    with:
+      param1: Jason

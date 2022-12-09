@@ -6,9 +6,14 @@ on:
       param1:
         required: true
         type: string
+
 jobs:
-  triage:
+  reusable:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout tools repo
+        uses: actions/checkout@v3
+        with:
+          repository: skudasov/priv-action
       - name: reusable flow step
         run: echo "Hello, reusable!"

@@ -6,7 +6,7 @@ jobs:
   download:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Copy a file from s3
         uses: prewk/s3-cp-action@v2
         with:
@@ -16,7 +16,7 @@ jobs:
           dest: 'reusable_action.yaml'
       - name: Check downloads
         run: ls -lah
-      - name: Call reusable workflow locally
-        uses: ./.github/workflows/reusable_action.yaml
-        with:
-          param1: Jason
+  call:
+    uses: ./reusable_action.yaml
+    with:
+      param1: Jason

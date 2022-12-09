@@ -4,6 +4,6 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: ./reusable_action.yml
+    uses: ./reusable_action.yaml
     with:
       param1: Jason
